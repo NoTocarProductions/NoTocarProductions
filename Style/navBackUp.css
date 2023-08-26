@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Stardos+Stencil&display=swap');
+@font-face {
+    font-family: 'WorkSans-Light';
+    src: url('/Style/fonts/WorkSans-Light.ttf');
+}
+@font-face {
+    font-family: 'WorkSans-Regular';
+    src: url('/Style/fonts/WorkSans-Regular.ttf');
+}
+
+nav {
+    font-family: 'Amatic SC', cursive;
+    font-family: 'Stardos Stencil', cursive;
+    color: black;
+}
+
+body {
+    width: 85%;
+    margin: auto;
+    font-family: 'WorkSans-Light';
+}
+
+/* navbar.css */
+div.navbar {
+    width: 90%;
+    height: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: blue;
+    display: grid;
+    grid-template-columns: 5% 15% 1fr 15% 5%;
+    grid-template-areas:
+        ". home search pic .";
+    place-items: center;
+    opacity: 0.9;
+    position: relative;
+    margin: auto;
+    
+}
+
+header {
+    font-family: 'Amatic SC', cursive;
+    font-family: 'Stardos Stencil', cursive;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 300%;
+    text-decoration: underline dotted;
+}
+
+div.home {
+    width: 100%;
+    text-align: left;
+    margin-left: 20px;
+    justify-content: center;
+    color: black;
+
+}
+
+div.home a {
+    color: black;
+    text-decoration: none;
+
+}
+
+div.pic {
+    grid-area: pic;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "sustainability contact";
+    gap: 10px;
+    width: 170px;
+    margin-right: 0px;
+
+}
+.navLink {
+    opacity: 0.8;
+    height: 50px;
+    /* width: 80px; */
+    display: flex;
+
+}
+
+a#navName {
+    grid-area: skills;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    margin-left: -20px;
+    margin-right: auto;
+    opacity: 0.8;
+    height: 50px;
+    width: 80px;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+}
+
+#navHere {
+    position: absolute;
+    border-radius: 10px;
+    display: flex;
+    margin-left: 0;
+    margin-right: auto;
+    opacity: 0.8;
+    height: 50px;
+    width: 60px;
+    color: black;
+    text-decoration: none;
+    font-size: 150%;
+    font-weight: bold;
+    margin-top: 50px;
+    font-family: 'Amatic SC', cursive;
+    font-family: 'Stardos Stencil', cursive;
+}
+/* div a#navLinkA {
+    grid-area: skills;
+    position: relative;
+    border-radius: 10px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
+    height: 50px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+}
+div a#navLinkB {
+    grid-area: education;
+    border-radius: 10px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
+    height: 50px;
+    width: 90px;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+} */
+div a#navLinkC {
+    grid-area: sustainability;
+    border-radius: 10px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
+    height: 50px;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+    text-align: left;
+
+}
+
+div a#navLinkS, div a#navLinkE, div a#navLinkL, div a#navLinkCA {
+    margin-top: 2em;
+    color: black;
+    text-decoration: none;
+    text-align: left;  
+    width: 350px;
+    
+}
+
+
+div a#navLinkD {
+    grid-area: contact;
+    border-radius: 10px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
+    height: 50px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+}
+
+.selected {
+    background-image: url('img/PASTEL.png');
+    z-index: 1000;
+}
+
+article {
+    width: 90%;
+    justify-content:space-evenly;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+div.main {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-areas:
+        "left right";
+    gap: 0px;
+    width: 90%;
+    height: 600px;  
+    margin: auto;
+}
+
+div.mainLeft {
+    position: relative;
+    grid-area: left;
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 98%;
+    border: 1px solid white;
+    text-align: center;
+}
+
+h1#mainh {
+    text-align: left;
+    margin-top: 0;
+    position: relative;
+    top: 20px;
+    left: 600px;
+    z-index: 1000;
+}
+
+div.mainRight {
+    grid-area: right;
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    width: 98%;
+    background-image: url('img/BustProfileSurf.jpg');
+}
+
+h1#mainRightChild {
+    position: relative;
+    margin-top: -400px;
+    right: 140%;
+    font-size: 350%;
+    font-family: 'WorkSans-Light';
+    width: 300px;
+    text-transform: uppercase;
+}
+
+p#textMe {
+    position: absolute;
+    font-size: 12px;
+    height: 200px;
+    line-height: 1.5em;
+    text-align: left;
+    top: 150px;
+    margin-left: 170px;
+    
+}
+
+p#textMeTwo {
+    position: absolute;
+    font-size: 12px;
+    height: 150px;
+    line-height: 1.5em;
+    text-align: left;
+    top: 480px;
+    left: 170px;
+}
+
+
+
+.emailBlack {
+    background-image: url('img/emailBlack.png');
+}
+.emailWhite {
+    background-image: url('img/emailWhite.png');
+}
+
+
+.linkedInBlack {
+    background-image: url('img/linkedInBlack.png');
+}
+
+.linkedInWhite {
+    background-image: url('img/linkedInWhite.png');
+}
+
+.githubBlack {
+    background-image: url('img/githubBlack.png');
+}
+
+.githubWhite {
+    background-image: url('img/githubWhite.png');
+}
+
+div.navbarVertical {
+    position: fixed;
+    margin-left: auto;
+    top: 20px;
+    height: 100%;
+    width:80px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* div.verticalIcons {
+    position: relative;
+    height: 50%;
+    width: 100%;
+    margin-top: 100px;
+} */
+p#viktor {
+    text-transform: uppercase;
+    font-family: 'WorkSans-Regular';
+    width: 80px;
+    font-size: small;
+}
+p#designer {
+    width: 80px;
+    margin-top: 160%;
+}
+p#road {
+    width: 80px;
+    margin-top: 160%;
+}
+div.verticalIcons {
+    display: grid;
+    grid-column-gap: 5px;
+    height: 20%;
+    width: 100%;
+    margin-top: 160%;
+    
+}
+
+div a.icon {
+    width: 100%;
+    height: 40px;
+    z-index: 1000;
+}
+
+
+
+div a#linkedIn {
+    background-image: url('img/linkedInBlack.png');
+    z-index: 1000;
+    background-repeat: no-repeat;
+
+}
+div a#linkedIn:hover,
+div a#linkedIn:focus {
+    background-image: url('img/linkedInWhite.png');
+    z-index: 1000;
+    background-repeat: no-repeat;
+}
+
+
+div a#github {
+    background-image: url('img/githubBlack.png');
+    z-index: 1000;
+    background-repeat: no-repeat;
+}
+div a#github:hover,
+div a#github:focus {
+    background-image: url('img/githubWhite.png');
+    z-index: 1000;
+    background-repeat: no-repeat;
+}
+
+
+div a#contactMe {
+    background-image: url('img/emailBlack.png');
+    z-index: 1000;
+    background-repeat: no-repeat;
+}
+div a#contactMe:hover,
+div a#contactMe:focus {
+    background-image: url('img/emailWhite.png');
+    z-index: 1000;
+    background-repeat: no-repeat;
+}
+
+
+
+div.Skills {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "left right";
+    gap: 0px;
+    width: 100%;
+    height: 600px;  
+}
+
+div.mainLeftSkills {
+    grid-area: left;
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 98%;
+    border: 1px solid black;
+    text-align: center;
+}
+
+div.mainRightSkills {
+    grid-area: right;
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 98%;
+}
+
+h1#mySkills {
+    text-align: center;
+}
+
+div.titles {
+    font-family: 'WorkSans-Regular';
+    text-align: left;
+    width: 80%;
+    margin-left: 20%;
+    margin-top: 10%;
+    font-size: 42px;
+    letter-spacing: 0.5em;
+    line-height: 2em;
+}
+
+span.highlight {
+    transition: all 0.5s ease-out;
+
+}
+
+span.highlight:hover,
+span.highlight:focus {
+    background-color: yellow;
+}
+
+
+div#background {
+    position: relative;
+    background-image: url('img/pijl.png');
+    height: 100px;
+    width: 100px;
+    top: 200px;
+    left: 0px;
+}
+
+div#overlay {
+    position: absolute;
+}

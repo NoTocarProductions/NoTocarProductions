@@ -7,15 +7,95 @@
 // console.log('Element is ' + offset + ' vertical pixels from <body>');
 // ----------------------------------------------------------
 
+// ADD PAINTBRUSH LINKS UPPER CORNER RIGHT
+// ----------------------------------------------------------
+let navLink = document.querySelectorAll('.navLink');
+navLink.forEach(element => {
+element.onmouseover = function() {  
+    element.classList.add('selected');
+}});
+// REMOVE PAINTBRUSH LINKS UPPER CORNER RIGHT
+navLink.forEach(element => {
+    element.onmouseout = function() {  
+        element.classList.remove('selected');
+}});
+// ----------------------------------------------------------
+
+function myFunction() {
+    var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.style.display === 'block') {
+        myDropdown.style.display = 'none';
+    } else {
+        myDropdown.style.display = 'block';
+    }
+}
 
 
-// SCROLL TO SPACER:
+//ROTATE THE READ MORE IMAGE
+// ----------------------------------------------------------
+let current_rotation =  0;
+function rotateImage() {
+    if(current_rotation >= 10000) {
+        current_rotation = 10000;
+    }
+    let image = document.querySelector("#rotateImg");
+    let imagePhone = document.querySelector("#rotateImgPhone");
+    image.style.transition = 'transform 500s';
+    imagePhone.style.transition = 'transform 500s';
+    current_rotation += 10000;
+    image.style.transform = 'rotate(' + current_rotation + 'deg)';
+    imagePhone.style.transform = 'rotate(' + current_rotation + 'deg)';
+}
+setInterval(rotateImage, 100);
+rotateImage();
+// ----------------------------------------------------------
+
+//SLIDESHOW PHONE
+// ----------------------------------------------------------
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+
+  if (n > slides.length) {
+    slideIndex = 1;
+    }
+  if (n < 1) {
+    slideIndex = slides.length;
+    }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+// ----------------------------------------------------------
+// SCROLL TO SKILLS:
 // ----------------------------------------------------------
 let linkSkills = document.getElementById('navLinkS');
 linkSkills.onclick = function(e) {
     e.preventDefault();
-    let element_to_scroll_to = document.querySelector('.spacer');
+    let element_to_scroll_to = document.querySelector('.mainSkillsArticle');
     element_to_scroll_to.scrollIntoView();
+    document.querySelector('.slideshow-container').scrollIntoView();  
 }
 // ----------------------------------------------------------
 // SCROLL TO EDUCATION:
@@ -47,115 +127,6 @@ linkContact.onclick = function(e) {
 }
 // ----------------------------------------------------------
 
-
-// ADD PAINTBRUSH LINKS UPPER CORNER RIGHT
-// ----------------------------------------------------------
-let navLink = document.querySelectorAll('.navLink');
-navLink.forEach(element => {
-element.onmouseover = function() {  
-    element.classList.add('selected');
-}});
-// ADD PAINTBRUSH LINKS UPPER CORNER RIGHT
-navLink.forEach(element => {
-    element.onmouseout = function() {  
-        element.classList.remove('selected');
-}});
-// ----------------------------------------------------------
-
-
-//ROTATE THE READ MORE IMAGE
-// ----------------------------------------------------------
-let current_rotation =  0;
-function rotateImage() {
-    if(current_rotation >= 10000) {
-        current_rotation = 10000;
-    }
-    let image = document.querySelector("#rotateImg");
-    image.style.transition = 'transform 500s';
-    current_rotation += 10000;
-    image.style.transform = 'rotate(' + current_rotation + 'deg)';
-}
-setInterval(rotateImage, 100);
-rotateImage();
-// ----------------------------------------------------------
-
-
-
-// SCROLL FUNCTIONALITIES PRIOR TO SKILLS SECTION
-// ----------------------------------------------------------
-
-// animation connected to the scroll; sliding in from the right
-let observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        const squares = entry.target.querySelectorAll('.skillItem');
-
-        if (entry.isIntersecting) {
-            squares.forEach(square => {
-                square.classList.add('slideRight');
-                
-            });
-            
-            return; // if we added the class, exit the function
-        }
-
-        // We're not intersecting, so remove the class!
-        squares.forEach(square => {
-            square.classList.remove('slideRight');
-        });
-    });
-});
-observer.observe(document.querySelector('.skillsLeft'));
-
-
-
-// animation connected to the scroll; sliding in from the left
-let observerTwo = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        const squares = entry.target.querySelectorAll('.skillItemTwo');
-
-        if (entry.isIntersecting) {
-            squares.forEach(square => {
-                square.classList.add('slideLeft');
-            });
-            return; // if we added the class, exit the function
-        }
-
-        // We're not intersecting, so remove the class!
-        squares.forEach(square => {
-            square.classList.remove('slideLeft');
-        });
-    });
-});
-observerTwo.observe(document.querySelector('.skillsLeft'));
-
-
-
-// animation connected to the scroll; static television
-var eventTriggered = false;
-
-window.addEventListener("scroll", function() {
-    if (!eventTriggered && (window.scrollY >= 1000)) {
-        var element = document.querySelector(".skillsRight");
-        element.classList.add("static");
-
-        setTimeout(() => {
-            element.classList.remove("static");
-            element.classList.add('fade-in');
-            let newDivRight = document.createElement('div');
-            newDivRight.innerHTML = "Play with me! choose a skill on your left to read more...";
-            newDivRight.classList.add('newDivRight');
-            element.appendChild(newDivRight);
-        }, 1500);
-        
-        eventTriggered = true;
-    }
-});
-// ----------------------------------------------------------
-
-
-
-
-
 // SKILLS SECTION 
 // ----------------------------------------------------------
 // get the elements from the dom 
@@ -172,7 +143,7 @@ skillOne.addEventListener('mouseover', () => createText("PM", "Due to my experie
 skillTwo.addEventListener('mouseover', () => createText("V", `‘ You don’t need eyes to see, you need vision’ – Maxi Jazz <br> Whether it is a website that needs to be created or code that needs to be written. I always try to work with a clear goal in sight where all parties are well informed and on board. To manifest vision it is paramount that the client and me are on the same page the entire length of the project.`));
 skillThree.addEventListener('mouseover', () => createText("PM", "Due to my broad interest in many subjects and a background in philosophy I always try to come up with new and exciting ideas that exhilarate potential visitors which will ensure to always leave an impression."));
 skillFour.addEventListener('mouseover', () => createText("V", "I don’t consider myself as ‘just a programmer’. I enjoy taking my time to think about design and functionality aspects as much as I do writing clean code. This – I believe – is where I stand out. To truly work together with graphic designers or other clients and actively think about the look and the feel of a website. The two roles are more intertwined than most dare to admit. I love thinking about aesthetics and I dare to make suggestions that might improve the feeling the user gets when visiting our creation. Just like mind and body can’t be fully separated, nor can designer and programmer be fully separated."));
-skillFive.addEventListener('mouseover', () => createText("PM", "I will do everything I can to learn about new techniques and ways to create the best possible creation during our collaboration. <p> IMPORTANT - boring lines of text will follow, look away now you still can - IMPORTANT </p> At the time of writing I mainly use the following programming languages in my projects: Javascript, PhP, HTML, CSS."));
+skillFive.addEventListener('mouseover', () => createText("PM", "I will do everything I can to learn about new techniques and ways to create the best possible creation during our collaboration. <p> IMPORTANT - boring lines of text will follow, look away now you still can - IMPORTANT </p> At the time of writing I mainly use the following programming languages in my projects: Javascript, PhP, SQL, HTML, CSS."));
 skillSix.addEventListener('mouseover', () => createTextCenter("V", `If you have read the above it should be clear that I highly value partnership and involvement of all parties in my projects. Interested to work together? <p style="text-align: center;">Scroll down or click the link above!</p>`));
 
 // mouseout event listeners
@@ -220,13 +191,48 @@ function deleteText() {
 
 // ----------------------------------------------------------
 
+// animation connected to the scroll; sliding in from the left
+let observerTwo = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+      const squares = entry.target.querySelectorAll('.skillItemTwo');
+
+      if (entry.isIntersecting) {
+          squares.forEach(square => {
+              square.classList.add('slideLeft');
+          });
+          return; // if we added the class, exit the function
+      }
+
+      // We're not intersecting, so remove the class!
+      squares.forEach(square => {
+          square.classList.remove('slideLeft');
+      });
+  });
+});
+observerTwo.observe(document.querySelector('.skillsLeft'));
 
 
-//SUBMIT ANIMATION
+
+// animation connected to the scroll; static television
+let eventTriggered = false;
+
+window.addEventListener("scroll", function() {
+  if (!eventTriggered && (window.scrollY >= 600)) {
+    console.log('triggered');
+      let element = document.querySelector(".skillsRight");
+      element.classList.add("static");
+
+      setTimeout(() => {
+          element.classList.remove("static");
+          element.classList.add('fade-in');
+          let newDivRight = document.createElement('div');
+          newDivRight.innerHTML = "Play with me! choose a skill on your left to read more...";
+          newDivRight.classList.add('newDivRight');
+          element.appendChild(newDivRight);
+      }, 1500);
+      
+      eventTriggered = true;
+  }
+});
 // ----------------------------------------------------------
-let submit = document.getElementById('submit');
-submit.onclick = function() {
-    submit.style.transition = "0.5s";
-    submit.innerHTML = "Thanks!";
-    submit.style.backgroundColor = 'white';
-}
+

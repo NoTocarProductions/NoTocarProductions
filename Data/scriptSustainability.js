@@ -1,4 +1,11 @@
-
+function myFunction() {
+    var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.style.display === 'block') {
+        myDropdown.style.display = 'none';
+    } else {
+        myDropdown.style.display = 'block';
+    }
+}
 // ADD PAINTBRUSH LINKS UPPER CORNER RIGHT
 // ----------------------------------------------------------
 let navLink = document.querySelectorAll('.navLink');
@@ -15,15 +22,15 @@ navLink.forEach(element => {
 
 
 window.onload = function() {
-    document.getElementById('upperLeftChild').classList.add('slideLeft');
-    document.getElementById('downRightChild').classList.add('slideRight');
+    document.getElementById('gridChildOneTitle').classList.add('slideLeft');
+    document.getElementById('gridChildFourTitle').classList.add('slideRight');
 }
 
 
-let fuentesChangeColor = document.querySelector('div.upperRight');
+let fuentesChangeColor = document.querySelector('div.gridChildTwo');
 fuentesChangeColor.onmouseover = function() {
-    fuentesChangeColor.classList.remove('upperRight');
-    fuentesChangeColor.classList.add('upperRightColor');
+    fuentesChangeColor.classList.remove('gridChildTwo');
+    fuentesChangeColor.classList.add('gridChildTwoColor');
     document.getElementById('highlight').classList.add('highLight');
     document.getElementById('camper').classList.add('Rotate');
     setTimeout(() => {
@@ -36,19 +43,19 @@ fuentesChangeColor.onmouseover = function() {
 
 
 fuentesChangeColor.onmouseout = function() {
-    fuentesChangeColor.classList.remove('upperRightColor');
-    fuentesChangeColor.classList.add('upperRight'); 
+    fuentesChangeColor.classList.remove('gridChildTwoColor');
+    fuentesChangeColor.classList.add('gridChildTwo'); 
     document.getElementById('camper').classList.remove('Rotate');
     document.getElementById('fuelGauge').classList.remove('Rotate');
     document.getElementById('ocean').classList.remove('Rotate');
     document.getElementById('highlight').classList.remove('highLight');
 }
 
-let interiorChangeColor = document.querySelector('div.downLeft');
+let interiorChangeColor = document.querySelector('div.gridChildThree');
 interiorChangeColor.onmouseover = function() {
-    interiorChangeColor.classList.remove('downLeft');
-    interiorChangeColor.classList.add('downLeftColor');
-    document.getElementById('highlightOffice').classList.add('highLight');
+    interiorChangeColor.classList.remove('gridChildThree');
+    interiorChangeColor.classList.add('gridChildThreeColor');
+    document.getElementById('highlightO').classList.add('highLight');
     document.getElementById('solarPanel').classList.add('Rotate');
     setTimeout(() => {
        document.getElementById('battery').classList.add('Rotate'); 
@@ -60,34 +67,12 @@ interiorChangeColor.onmouseover = function() {
 
 
 interiorChangeColor.onmouseout = function() {
-    interiorChangeColor.classList.remove('downLeftColor');
-    interiorChangeColor.classList.add('downLeft'); 
+    interiorChangeColor.classList.remove('gridChildThreeColor');
+    interiorChangeColor.classList.add('gridChildThree'); 
     document.getElementById('solarPanel').classList.remove('Rotate');
     document.getElementById('battery').classList.remove('Rotate');
     document.getElementById('charity').classList.remove('Rotate');
-    document.getElementById('highlightOffice').classList.remove('highLight');
+    document.getElementById('highlightO').classList.remove('highLight');
 }
 
 
-var eventTriggered = false;
-
-window.addEventListener("scroll", function() {
-    if (!eventTriggered && (window.scrollY >= 800  )) {
-        let element = document.querySelector(".charityTitle");
-        let otherElement = document.querySelector(".charityDiv")
-        element.classList.remove("charityTitle");
-        element.classList.add("charityOpacity");
-        otherElement.classList.remove('charityDiv');
-        otherElement.classList.add('charityDivOpacity');
-        // setTimeout(() => {
-        //     element.classList.remove("static");
-        //     element.classList.add('fade-in');
-        //     let newDivRight = document.createElement('div');
-        //     newDivRight.innerHTML = "Play with me! choose a skill on your left to read more...";
-        //     newDivRight.classList.add('newDivRight');
-        //     element.appendChild(newDivRight);
-        // }, 1500);
-        
-        eventTriggered = true;
-    }
-});

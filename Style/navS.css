@@ -84,6 +84,8 @@ nav.navbarPhone {
     display: flex;
     align-items: center;
     justify-content: space-between;
+	max-width: 360px;
+	margin: auto;
 }
 
 img#rotateImg {

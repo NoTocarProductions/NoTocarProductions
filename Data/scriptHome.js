@@ -11,14 +11,16 @@
 // ----------------------------------------------------------
 let navLink = document.querySelectorAll('.navLink');
 navLink.forEach(element => {
-element.onmouseover = function() {  
-    element.classList.add('selected');
-}});
+    element.onmouseover = function () {
+        element.classList.add('selected');
+    }
+});
 // REMOVE PAINTBRUSH LINKS UPPER CORNER RIGHT
 navLink.forEach(element => {
-    element.onmouseout = function() {  
+    element.onmouseout = function () {
         element.classList.remove('selected');
-}});
+    }
+});
 // ----------------------------------------------------------
 
 function myFunction() {
@@ -33,9 +35,9 @@ function myFunction() {
 
 //ROTATE THE READ MORE IMAGE
 // ----------------------------------------------------------
-let current_rotation =  0;
+let current_rotation = 0;
 function rotateImage() {
-    if(current_rotation >= 10000) {
+    if (current_rotation >= 10000) {
         current_rotation = 10000;
     }
     let image = document.querySelector("#rotateImg");
@@ -57,51 +59,51 @@ showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+    showSlides(slideIndex += n);
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+    showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
 
-  if (n > slides.length) {
-    slideIndex = 1;
+    if (n > slides.length) {
+        slideIndex = 1;
     }
-  if (n < 1) {
-    slideIndex = slides.length;
+    if (n < 1) {
+        slideIndex = slides.length;
     }
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
 
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
 
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
 }
 // ----------------------------------------------------------
 // SCROLL TO SKILLS:
 // ----------------------------------------------------------
 let linkSkills = document.getElementById('navLinkS');
-linkSkills.onclick = function(e) {
+linkSkills.onclick = function (e) {
     e.preventDefault();
     let element_to_scroll_to = document.querySelector('.mainSkillsArticle');
     element_to_scroll_to.scrollIntoView();
-    document.querySelector('.slideshow-container').scrollIntoView();  
+    document.querySelector('.slideshow-container').scrollIntoView();
 }
 // ----------------------------------------------------------
 // SCROLL TO EDUCATION:
 // ----------------------------------------------------------
 let linkEducation = document.getElementById('navLinkE');
-linkEducation.onclick = function(e) {
+linkEducation.onclick = function (e) {
     e.preventDefault();
     let element_to_scroll_to = document.querySelector('.timelineBox');
     element_to_scroll_to.scrollIntoView();
@@ -110,7 +112,7 @@ linkEducation.onclick = function(e) {
 // SCROLL TO LET'S WORK TOGETHER :
 // ----------------------------------------------------------
 let linkTogether = document.getElementById('navLinkL');
-linkTogether.onclick = function(e) {
+linkTogether.onclick = function (e) {
     e.preventDefault();
     let element_to_scroll_to = document.querySelector('.footer');
     element_to_scroll_to.scrollIntoView();
@@ -120,7 +122,7 @@ linkTogether.onclick = function(e) {
 // SCROLL TO CONTACT :
 // ----------------------------------------------------------
 let linkContact = document.getElementById('navLinkD');
-linkContact.onclick = function(e) {
+linkContact.onclick = function (e) {
     e.preventDefault();
     let element_to_scroll_to = document.querySelector('.footer');
     element_to_scroll_to.scrollIntoView();
@@ -139,12 +141,30 @@ let skillSix = document.getElementById('skillSix');
 let divRight = document.querySelector('.skillsRight');
 
 // mouseover event listeners
-skillOne.addEventListener('mouseover', () => createText("PM", "Due to my experience in managing projects for a major content marketing office I can safely promise to hold a strict timing regiment for your project with all parties involved."));
-skillTwo.addEventListener('mouseover', () => createText("V", `‘ You don’t need eyes to see, you need vision’ – Maxi Jazz <br> Whether it is a website that needs to be created or code that needs to be written. I always try to work with a clear goal in sight where all parties are well informed and on board. To manifest vision it is paramount that the client and me are on the same page the entire length of the project.`));
-skillThree.addEventListener('mouseover', () => createText("PM", "Due to my broad interest in many subjects and a background in philosophy I always try to come up with new and exciting ideas that exhilarate potential visitors which will ensure to always leave an impression."));
-skillFour.addEventListener('mouseover', () => createText("V", "I don’t consider myself as ‘just a programmer’. I enjoy taking my time to think about design and functionality aspects as much as I do writing clean code. This – I believe – is where I stand out. To truly work together with graphic designers or other clients and actively think about the look and the feel of a website. The two roles are more intertwined than most dare to admit. I love thinking about aesthetics and I dare to make suggestions that might improve the feeling the user gets when visiting our creation. Just like mind and body can’t be fully separated, nor can designer and programmer be fully separated."));
-skillFive.addEventListener('mouseover', () => createText("PM", "I will do everything I can to learn about new techniques and ways to create the best possible creation during our collaboration. <p> IMPORTANT - boring lines of text will follow, look away now you still can - IMPORTANT </p> At the time of writing I mainly use the following programming languages in my projects: Javascript, PhP, SQL, HTML, CSS."));
-skillSix.addEventListener('mouseover', () => createTextCenter("V", `If you have read the above it should be clear that I highly value partnership and involvement of all parties in my projects. Interested to work together? <p style="text-align: center;">Scroll down or click the link above!</p>`));
+skillOne.addEventListener('mouseover', () => {
+    staticTelevision();
+    createText("PM", "Due to my experience in managing projects for a major content marketing office I can safely promise to hold a strict timing regiment for your project with all parties involved.");
+});
+skillTwo.addEventListener('mouseover', () => {
+    staticTelevision();
+    createText("V", `‘ You don’t need eyes to see, you need vision’ – Maxi Jazz <br> Whether it is a website that needs to be created or code that needs to be written. I always try to work with a clear goal in sight where all parties are well informed and on board. To manifest vision it is paramount that the client and me are on the same page the entire length of the project.`);
+});
+skillThree.addEventListener('mouseover', () => {
+    staticTelevision();
+    createText("PM", "Due to my broad interest in many subjects and a background in philosophy I always try to come up with new and exciting ideas that exhilarate potential visitors which will ensure to always leave an impression.");
+});
+skillFour.addEventListener('mouseover', () => {
+    staticTelevision();
+    createText("V", "I don’t consider myself as ‘just a programmer’. I enjoy taking my time to think about design and functionality aspects as much as I do writing clean code. This – I believe – is where I stand out. To truly work together with graphic designers or other clients and actively think about the look and the feel of a website. The two roles are more intertwined than most dare to admit. I love thinking about aesthetics and I dare to make suggestions that might improve the feeling the user gets when visiting our creation.");
+});
+skillFive.addEventListener('mouseover', () => {
+    staticTelevision();
+    createText("PM", "I will do everything I can to learn about new techniques and ways to create the best possible creation during our collaboration. <p> IMPORTANT - boring lines of text will follow, look away now you still can - IMPORTANT </p> At the time of writing I mainly use the following programming languages in my projects: Javascript, PhP, SQL, HTML, CSS.");
+});
+skillSix.addEventListener('mouseover', () => {
+    staticTelevision();
+    createTextCenter("V", `If you have read the above it should be clear that I highly value partnership and involvement of all parties in my projects. Interested to work together? <p style="text-align: center;">Scroll down or click the link above!</p>`);
+});
 
 // mouseout event listeners
 skillOne.addEventListener('mouseout', deleteText);
@@ -158,7 +178,7 @@ skillSix.addEventListener('mouseout', deleteText);
 // function to delete the welcome text at the skills section
 function deleteDiv() {
     let newDivRight = document.querySelector('.newDivRight');
-    if(newDivRight) {
+    if (newDivRight) {
         newDivRight.remove();
     }
 }
@@ -166,15 +186,20 @@ function deleteDiv() {
 // function to create a new text onmouseover
 function createText(type, content) {
     deleteDiv();
+    let skillsRightDiv = document.querySelector(".skillsRight");
+    skillsRightDiv.style.cssText = "background-color: black";
     const newDiv = document.createElement("div");
     newDiv.innerHTML = content;
     newDiv.classList.add('newDiv', type === "PM" ? 'square' : 'newDivLeft', 'square');
     divRight.appendChild(newDiv);
+
+
 }
 
 // function to create the center text
 function createTextCenter(type, content) {
-    deleteDiv();    
+    deleteDiv();
+
     const newDiv = document.createElement("div");
     newDiv.innerHTML = content;
     newDiv.classList.add('newDiv', 'newDivCenter', 'square');
@@ -187,27 +212,29 @@ function deleteText() {
     if (newDiv) {
         newDiv.remove();
     }
+    let skillsRightDiv = document.querySelector(".skillsRight");
+    skillsRightDiv.style.cssText = "background-color: ";
 }
 
 // ----------------------------------------------------------
 
 // animation connected to the scroll; sliding in from the left
 let observerTwo = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-      const squares = entry.target.querySelectorAll('.skillItemTwo');
+    entries.forEach(entry => {
+        const squares = entry.target.querySelectorAll('.skillItemTwo');
 
-      if (entry.isIntersecting) {
-          squares.forEach(square => {
-              square.classList.add('slideLeft');
-          });
-          return; // if we added the class, exit the function
-      }
+        if (entry.isIntersecting) {
+            squares.forEach(square => {
+                square.classList.add('slideLeft');
+            });
+            return; // if we added the class, exit the function
+        }
 
-      // We're not intersecting, so remove the class!
-      squares.forEach(square => {
-          square.classList.remove('slideLeft');
-      });
-  });
+        // We're not intersecting, so remove the class!
+        squares.forEach(square => {
+            square.classList.remove('slideLeft');
+        });
+    });
 });
 observerTwo.observe(document.querySelector('.skillsLeft'));
 
@@ -216,23 +243,32 @@ observerTwo.observe(document.querySelector('.skillsLeft'));
 // animation connected to the scroll; static television
 let eventTriggered = false;
 
-window.addEventListener("scroll", function() {
-  if (!eventTriggered && (window.scrollY >= 600)) {
-    console.log('triggered');
-      let element = document.querySelector(".skillsRight");
-      element.classList.add("static");
+window.addEventListener("scroll", function () {
+    if (!eventTriggered && (window.scrollY >= 600)) {
+        console.log('triggered');
+        let element = document.querySelector(".skillsRight");
+        element.classList.add("static");
 
-      setTimeout(() => {
-          element.classList.remove("static");
-          element.classList.add('fade-in');
-          let newDivRight = document.createElement('div');
-          newDivRight.innerHTML = "Play with me! choose a skill on your left to read more...";
-          newDivRight.classList.add('newDivRight');
-          element.appendChild(newDivRight);
-      }, 1500);
-      
-      eventTriggered = true;
-  }
+        setTimeout(() => {
+            element.classList.remove("static");
+            element.classList.add('fade-in');
+            let newDivRight = document.createElement('div');
+            newDivRight.innerHTML = "Play with me! choose a skill on your left to read more...";
+            newDivRight.classList.add('newDivRight');
+            element.appendChild(newDivRight);
+        }, 1500);
+
+        eventTriggered = true;
+    }
 });
 // ----------------------------------------------------------
 
+
+function staticTelevision() {
+    let element = document.querySelector(".skillsRight");
+    element.classList.add("static");
+
+    setTimeout(() => {
+        element.classList.remove("static");
+    }, 500);
+}

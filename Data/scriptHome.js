@@ -244,8 +244,7 @@ observerTwo.observe(document.querySelector('.skillsLeft'));
 let eventTriggered = false;
 
 window.addEventListener("scroll", function () {
-    if (!eventTriggered && (window.scrollY >= 600)) {
-        console.log('triggered');
+    if (!eventTriggered && window.innerWidth > 1100 && (window.scrollY >= 600)) {
         let element = document.querySelector(".skillsRight");
         element.classList.add("static");
 
@@ -262,6 +261,64 @@ window.addEventListener("scroll", function () {
     }
 });
 // ----------------------------------------------------------
+
+
+// animation connected to the scroll; static television for the phone
+let eventPhoneTriggered = false;
+let hideProject = document.querySelector('div.text');
+hideProject.classList.add("hideMe");
+
+window.addEventListener("scroll", function () {
+    if (!eventPhoneTriggered && window.innerWidth < 1100 && (window.scrollY >= 900)) {
+        let hideProject = document.querySelector('div.text');
+        hideProject.classList.remove("hideMe");
+        StaticTelevisionPhone();
+        let element = document.querySelector(".slideshow-container");
+
+    }
+});
+// ----------------------------------------------------------
+
+
+
+
+
+// static television function for the phone 
+// ----------------------------------------------------------
+function StaticTelevisionPhone() {
+    let element = document.querySelectorAll("div.text");
+    let elementTitle = document.querySelectorAll(".text h2");
+    let elementP = document.querySelectorAll(".text p");
+    element.forEach(elementOf => {
+        elementOf.classList.add("static");
+    });
+    elementTitle.forEach(elementOf => {
+        elementOf.classList.add("hideMe");
+    });
+    elementP.forEach(elementOf => {
+        elementOf.classList.add("hideMe");
+    });
+
+
+    setTimeout(() => {
+        element.forEach(elementOf => {
+            elementOf.classList.remove("static");
+        });
+        // element.classList.remove("static");
+        elementTitle.forEach(elementOf => {
+            elementOf.classList.remove("hideMe");
+        });
+        elementP.forEach(elementOf => {
+            elementOf.classList.remove("hideMe");
+        });
+    }, 800);
+
+    eventPhoneTriggered = true;
+}
+// ----------------------------------------------------------
+
+
+
 
 
 function staticTelevision() {

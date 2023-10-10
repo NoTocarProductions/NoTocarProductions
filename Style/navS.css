@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Stardos+Stencil&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@1&family=Trocchi&display=swap');
 
 @font-face {
     font-family: 'WorkSans-Light';
@@ -142,7 +143,8 @@
         outline: none;
         color: white;
         background-color: inherit;
-        font-family: inherit;
+        font-family: 'Trocchi', serif;
+
         margin: 0;
     }
 
@@ -166,7 +168,7 @@
     }
 
     .dropdown-content a:hover {
-        background-color: hsl(210, 100%, 75%);
+        background-color: yellow;
     }
 
     .show {
@@ -282,6 +284,9 @@
         margin: auto;
         left: 4%;
         font-size: 30px;
+        font-family: 'Trocchi', serif;
+
+
     }
 
 
@@ -328,11 +333,11 @@
     /* navbar.css */
     .navbar {
         height: 60px;
-        display: grid;
+        display: flex;
         opacity: 0.9;
         position: relative;
         margin: auto;
-        align-items: end;
+        align-items: center;
         width: 80%;
 
     }
@@ -367,9 +372,9 @@
 
     div.pic {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-areas:
-            "home sustainability contact";
+            "home sustainability";
         width: 25%;
         justify-self: end;
         margin-left: auto;
@@ -391,7 +396,7 @@
         margin-right: auto;
         opacity: 0.8;
         height: 50px;
-        width: 100px;
+        width: auto;
         justify-content: center;
         align-items: center;
         color: black;
@@ -399,21 +404,7 @@
         text-align: left;
     }
 
-    a#navName {
-        grid-area: skills;
-        position: relative;
-        border-radius: 10px;
-        display: flex;
-        margin-left: -20px;
-        margin-right: auto;
-        opacity: 0.8;
-        height: 50px;
-        width: 80px;
-        justify-content: center;
-        align-items: center;
-        color: black;
-        text-decoration: none;
-    }
+
 
     div a#navLinkC {
         grid-area: sustainability;
@@ -422,7 +413,7 @@
         margin-right: auto;
         opacity: 0.8;
         height: 50px;
-        width: 100px;
+        width: auto;
         justify-content: center;
         align-items: center;
         color: black;
@@ -431,7 +422,17 @@
     }
 
 
-
+    span.highlight {
+        transition: all 0.5s ease-out;
+        padding: 4px;
+        border-radius: 8px;
+      }
+    
+      span.highlight:hover,
+      span.highlight:focus {
+        background-color: yellow;
+      }
+    
     div a#navLinkS,
     div a#navLinkE,
     div a#navLinkL,
@@ -445,20 +446,6 @@
 
 
 
-    div a#navLinkD {
-        grid-area: contact;
-        border-radius: 10px;
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-        opacity: 0.8;
-        height: 50px;
-        width: 60px;
-        justify-content: center;
-        align-items: center;
-        color: black;
-        text-decoration: none;
-    }
 
     .selected {
         background-image: url('img/PASTEL.png');
@@ -500,32 +487,45 @@
         font-weight: bold;
         font-size: 12px;
         z-index: 1000;
+        font-family: 'Trocchi', serif;
+    
     }
 
     p#viktor {
         text-transform: uppercase;
-        font-family: 'WorkSans-Regular';
         width: 80px;
         font-size: small;
+        font-family: 'Trocchi', serif;
     }
+
 
     p#designer {
         width: 80px;
         margin-top: 160%;
-    }
-
-    span#designer {
-        padding: 24px 0px;
-        font-size: 120%;
-        font-family: 'WorkSans-Regular';
+      }
+    
+      span#creative {
+        color: yellow;
+        text-shadow: 0 0 5px hsla(0, 0%, 0%, 0.9);
+    
+        font-size: 16px;
+        line-height: 1.5em;
+      
+      }
+    
+      span#designer {
+        font-size: 18px;
+        font-family: 'Trocchi', serif;
         text-transform: uppercase;
         color: hsl(0, 0%, 10%);
-    }
-
-    p#road {
+        text-decoration: underline solid 2px yellow;
+        line-height: 2em;
+      }
+    
+      p#road {
         width: 80px;
         margin-top: 160%;
-    }
+      }
 
     div.verticalIcons {
         display: grid;
@@ -654,6 +654,7 @@
         margin: auto;
         left: 4%;
         font-size: 46px;
+        font-family: 'Trocchi', serif;    
     }
 
 
@@ -699,6 +700,8 @@
         background-color: yellow;
         opacity: 0.8;
         transition: all 1s ease-out;
+        border-radius: 16px;
+        padding: 6px;
 
     }
 
@@ -774,3 +777,12 @@
 
 
 }
+.slideRight {
+    animation-duration: 3s;
+    animation-name: slideinFromRight;
+  }
+
+  .slideLeft {
+    animation-duration: 3s;
+    animation-name: slideinFromLeft;
+  }

@@ -113,7 +113,7 @@ linkEducation.onclick = function (e) {
 let linkTogether = document.getElementById("navLinkL");
 linkTogether.onclick = function (e) {
   e.preventDefault();
-  let element_to_scroll_to = document.querySelector(".footer");
+  let element_to_scroll_to = document.querySelector("footer");
   element_to_scroll_to.scrollIntoView();
 };
 // ----------------------------------------------------------
@@ -134,15 +134,6 @@ linkCases.onclick = function (e) {
 };
 // ----------------------------------------------------------
 
-// SCROLL TO CONTACT :
-// ----------------------------------------------------------
-let linkContact = document.getElementById("navLinkD");
-linkContact.onclick = function (e) {
-  e.preventDefault();
-  let element_to_scroll_to = document.querySelector(".footer");
-  element_to_scroll_to.scrollIntoView();
-};
-// ----------------------------------------------------------
 
 // SKILLS SECTION
 // ----------------------------------------------------------
@@ -485,7 +476,7 @@ function copyToClipboard(elementId) {
   // Optionally, provide some visual feedback to the user
 }
 document.getElementById('copy').addEventListener("mouseover", function(e) {
-  document.querySelector('.footerContainerCenterChild p').innerHTML = "click to copy";
+  document.querySelector('.footerContainerCenterChild p').innerHTML = "CLICK TO COPY";
   document.querySelector('.footerContainerCenterChild p').classList.add('slideInFromUpThree');
 });
 document.getElementById('copy').addEventListener("mouseout", function(e) {

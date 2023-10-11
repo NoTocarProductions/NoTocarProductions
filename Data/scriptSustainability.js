@@ -6,20 +6,6 @@ function myFunction() {
         myDropdown.style.display = 'block';
     }
 }
-// ADD PAINTBRUSH LINKS UPPER CORNER RIGHT
-// ----------------------------------------------------------
-let navLink = document.querySelectorAll('.navLink');
-navLink.forEach(element => {
-element.onmouseover = function() {  
-    element.classList.add('selected');
-}});
-// ADD PAINTBRUSH LINKS UPPER CORNER RIGHT
-navLink.forEach(element => {
-    element.onmouseout = function() {  
-        element.classList.remove('selected');
-}});
-// ----------------------------------------------------------
-
 
 window.onload = function() {
     document.getElementById('gridChildOneTitle').classList.add('slideLeft');

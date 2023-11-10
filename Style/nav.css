@@ -1757,3 +1757,10 @@ p#blackText {
 }
 
 }
+
+.VVT {
+  text-decoration: underline solid yellow;
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+}
